@@ -1,0 +1,71 @@
+StangaNet Source-Available License v1.0
+
+Copyright (c) StangaNet. All rights reserved.
+
+────────────────────────────────────────────────────────────────
+GRANT OF RIGHTS
+────────────────────────────────────────────────────────────────
+
+Subject to the conditions below, you are granted a limited,
+non-exclusive, non-transferable right to:
+
+  1. VIEW   — Read and study the source code for personal
+              learning and reference purposes.
+
+  2. USE    — Incorporate parts of this code into personal,
+              non-commercial projects, provided all conditions
+              below are met.
+
+────────────────────────────────────────────────────────────────
+CONDITIONS
+────────────────────────────────────────────────────────────────
+
+ATTRIBUTION REQUIRED (MANDATORY IN ALL CASES)
+
+    Any use of this code, in whole or in part, must include
+    clear and prominent credit to StangaNet as the original
+    author. This credit must appear in:
+
+      - The project's README or main documentation, AND
+      - Any user-facing credits, about pages, or similar
+        sections, where technically applicable.
+
+    The attribution must read, at minimum:
+
+      "Includes work by StangaNet (https://github.com/StangaNet)"
+
+    Removing, hiding, or obscuring this attribution is
+    strictly prohibited.
+
+  NO COMMERCIAL USE
+
+    You may not use this code, in whole or in part, for any
+    commercial purpose, including but not limited to: selling,
+    licensing, embedding in a revenue-generating product or
+    service, or use within a commercial organization's internal
+    tooling.
+
+  NO REDISTRIBUTION OF MODIFICATIONS
+
+    You may not publish, distribute, sublicense, or make
+    publicly available any modified version of this code.
+    Private forking for personal use is permitted provided
+    the fork remains private and attribution is maintained.
+
+  NO CLAIM OF AUTHORSHIP
+
+    You may not represent this code, or any work derived from
+    it, as your own original creation. You may not remove or
+    alter any copyright notices present in the source.
+
+────────────────────────────────────────────────────────────────
+DISCLAIMER
+────────────────────────────────────────────────────────────────
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+NON-INFRINGEMENT. IN NO EVENT SHALL STANGANET BE LIABLE FOR
+ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN CONTRACT,
+TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH
+THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

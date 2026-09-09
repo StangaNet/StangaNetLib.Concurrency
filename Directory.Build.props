@@ -1,0 +1,21 @@
+﻿<Project>
+  <PropertyGroup>
+    <Authors>StangaNet</Authors>
+    <Company>StangaNet</Company>
+    <Copyright>Copyright (c) StangaNet. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/StangaNet/StangaNetLib.Concurrency</PackageProjectUrl>
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)artifacts</PackageOutputPath>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591;NU1903</NoWarn>
+  </PropertyGroup>
+</Project>
