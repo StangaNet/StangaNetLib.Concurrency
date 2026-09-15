@@ -5,7 +5,7 @@
     <RootNamespace>StangaNetLib.Concurrency</RootNamespace>
     <Description>Simplified threading, multi-threading and concurrent data access utilities: keyed locks, async throttling, bounded work queues, debouncing, and atomic counters.</Description>
     <PackageTags>concurrency;threading;async;locking;channels;stangaNet</PackageTags>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

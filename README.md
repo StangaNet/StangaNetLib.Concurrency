@@ -3,7 +3,7 @@
 Simplified threading, multi-threading and concurrent data access utilities for .NET: keyed locks, async throttling, bounded work queues, debouncing, and atomic counters.
 
 [![CI](https://github.com/StangaNet/StangaNetLib.Concurrency/actions/workflows/main.yml/badge.svg)](https://github.com/StangaNet/StangaNetLib.Concurrency/actions/workflows/main.yml)
-[![NuGet](https://img.shields.io/nuget/v/StangaNetLib.Concurrency)](https://www.nuget.org/packages/StangaNetLib.Concurrency)
+![NuGet](https://img.shields.io/badge/nuget-1.0.1-blue)
 [![.NET](https://img.shields.io/badge/.NET-8%20%7C%209-512BD4)](https://dotnet.microsoft.com)
 
 ## Overview
@@ -33,12 +33,8 @@ Add the GitHub Packages feed to your `nuget.config`:
 Add the package to your `.csproj`:
 
 ```xml
-<PackageReference Include="StangaNetLib.Concurrency" Version="1.0.0" />
+<PackageReference Include="StangaNetLib.Concurrency" Version="1.0.1" />
 ```
-
-**Dependencies:**
-
-- `StangaNetLib.Core` ≥ 1.0.0
 
 ## Core Components
 
