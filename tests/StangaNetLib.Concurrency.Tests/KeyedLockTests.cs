@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using FluentAssertions;
 using StangaNetLib.Concurrency.Core;
 using StangaNetLib.Concurrency.Locking;
@@ -12,20 +13,30 @@ public sealed class KeyedLockTests
     [Fact]
     public async Task AcquireAsync_SameKey_SerializesAccess()
     {
-        var results = new List<int>();
+        var results = new ConcurrentQueue<int>();
+        var t1Holding = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        var releaseT1 = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+
         var t1 = Task.Run(async () =>
         {
             await using var handle = await _sut.AcquireAsync("resource-1");
-            results.Add(1);
-            await Task.Delay(50);
-            results.Add(2);
+            results.Enqueue(1);
+            t1Holding.SetResult();
+            await releaseT1.Task;
+            results.Enqueue(2);
         });
-        await Task.Delay(10);
+
+        await t1Holding.Task;
+
         var t2 = Task.Run(async () =>
         {
             await using var handle = await _sut.AcquireAsync("resource-1");
-            results.Add(3);
+            results.Enqueue(3);
         });
+
+        // Ensure t2 is blocked on the same key before t1 releases.
+        await Task.Delay(50);
+        releaseT1.SetResult();
 
         await Task.WhenAll(t1, t2);
 
@@ -35,25 +46,31 @@ public sealed class KeyedLockTests
     [Fact]
     public async Task AcquireAsync_DifferentKeys_RunConcurrently()
     {
-        var started = new List<int>();
-        var cts = new CancellationTokenSource(TimeSpan.FromSeconds(2));
+        var started = new ConcurrentQueue<int>();
+        var bothStarted = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        var seen = 0;
 
         var t1 = Task.Run(async () =>
         {
             await using var handle = await _sut.AcquireAsync("key-A");
-            started.Add(1);
-            await Task.Delay(100);
+            started.Enqueue(1);
+            if (Interlocked.Increment(ref seen) == 2)
+                bothStarted.TrySetResult();
+            await bothStarted.Task.WaitAsync(TimeSpan.FromSeconds(2));
         });
         var t2 = Task.Run(async () =>
         {
-            await Task.Delay(20);
             await using var handle = await _sut.AcquireAsync("key-B");
-            started.Add(2);
+            started.Enqueue(2);
+            if (Interlocked.Increment(ref seen) == 2)
+                bothStarted.TrySetResult();
+            await bothStarted.Task.WaitAsync(TimeSpan.FromSeconds(2));
         });
 
-        await Task.WhenAll(t1, t2).WaitAsync(cts.Token);
+        await Task.WhenAll(t1, t2);
 
-        started.Should().Contain(1).And.Contain(2);
+        // If keys were serialized, one task would time out waiting for the other to start.
+        started.Should().BeEquivalentTo(new[] { 1, 2 });
     }
 
     [Fact]
