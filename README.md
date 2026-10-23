@@ -2,7 +2,7 @@
 
 [![.NET CI](https://github.com/StangaNet/StangaNetLib.Concurrency/actions/workflows/main.yml/badge.svg)](https://github.com/StangaNet/StangaNetLib.Concurrency/actions/workflows/main.yml)
 ![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)
-![.NET](https://img.shields.io/badge/.NET-8.0%20%7C%209.0-512BD4)
+![.NET](https://img.shields.io/badge/.NET-8.0%20%7C%209.0%20%7C%2010.0-512BD4)
 
 Simplified threading and concurrent data-access utilities for .NET: keyed locks, async throttling, bounded work queues, debouncing, and atomic counters. Built on [`StangaNetLib.Core`](https://github.com/StangaNet/StangaNetLib.Core) (`Result` / `Error`).
 
@@ -11,7 +11,7 @@ Simplified threading and concurrent data-access utilities for .NET: keyed locks,
 - **Domain-centric**: primitives grouped by purpose (`Locking`, `Throttling`, `Synchronization`, `Scheduling`).
 - **Functional failures**: timeouts and full queues return `Result` / `ConcurrencyErrors`; exceptions stay for invalid arguments.
 - **Defensive**: guard clauses and thread-safe primitives for high-contention scenarios.
-- **Modern .NET**: `net8.0` / `net9.0`, `IAsyncDisposable`, `ValueTask`-friendly APIs.
+- **Modern .NET**: `net8.0` / `net9.0` / `net10.0`, `IAsyncDisposable`, `ValueTask`-friendly APIs.
 
 ## Installation
 

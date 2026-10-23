@@ -5,4 +5,4 @@
 - Keep public APIs documented (`///`), thread-safe, and free of host-specific infrastructure.
 - DI entry point is `AddStangaNetLibConcurrency` in `StangaNetLib.Concurrency.Extensions`.
 - Match existing naming, file-scoped namespaces, and EditorConfig / Roslyn conventions.
-- Tests use xUnit v3 + FluentAssertions; cover both `net8.0` and `net9.0` when changing shared behavior.
+- Tests use xUnit v3 + FluentAssertions; cover `net8.0`, `net9.0`, and `net10.0` when changing shared behavior.
