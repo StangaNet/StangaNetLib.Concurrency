@@ -1,7 +1,7 @@
 # StangaNetLib.Concurrency
 
 [![.NET CI](https://github.com/StangaNet/StangaNetLib.Concurrency/actions/workflows/main.yml/badge.svg)](https://github.com/StangaNet/StangaNetLib.Concurrency/actions/workflows/main.yml)
-![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)
+![NuGet](https://img.shields.io/badge/nuget-1.0.1-blue)
 ![.NET](https://img.shields.io/badge/.NET-8.0%20%7C%209.0%20%7C%2010.0-512BD4)
 
 Simplified threading and concurrent data-access utilities for .NET: keyed locks, async throttling, bounded work queues, debouncing, and atomic counters. Built on [`StangaNetLib.Core`](https://github.com/StangaNet/StangaNetLib.Core) (`Result` / `Error`).
